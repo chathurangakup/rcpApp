@@ -145,24 +145,26 @@ static getDerivedStateFromProps(props, state) {
 
     //  this.props.dispatch(loginUser(obj));
     //  this.props.dispatch(clearProps());
-      if (this.state.passwordmessagestate.length < 8) {
-        this.setState({passwordmessageerrorstate:'Password must be at least 8 characters long'})
+    //   if (this.state.passwordmessagestate.length < 6) {
+    //     this.setState({passwordmessageerrorstate:'Password must be at least 6 characters long'})
        
-    } else if (this.state.passwordmessagestate.length > 50) {
-      this.setState({passwordmessageerrorstate:'Please Enter new password too long'})
+    // } else if (this.state.passwordmessagestate.length > 50) {
+    //   this.setState({passwordmessageerrorstate:'Please Enter new password too long'})
     
-    } else if (this.state.passwordmessagestate.search(/\d/) == -1) {
-      this.setState({passwordmessageerrorstate:'Contain at least one number,'})
+    // } else if (this.state.passwordmessagestate.search(/\d/) == -1) {
+    //   this.setState({passwordmessageerrorstate:'Contain at least one number,'})
       
-    } else if (this.state.passwordmessagestate.search(/[a-z]/) == -1) {
-      this.setState({passwordmessageerrorstate:'Contain at least one lowercase letter'})
+    // } else if (this.state.passwordmessagestate.search(/[a-z]/) == -1) {
+    //   this.setState({passwordmessageerrorstate:'Contain at least one lowercase letter'})
      
-    }else if (this.state.passwordmessagestate.search(/[A-Z]/) == -1) {
-      this.setState({passwordmessageerrorstate:'Contain at least one uppercase letter'})
+    // }else if (this.state.passwordmessagestate.search(/[A-Z]/) == -1) {
+    //   this.setState({passwordmessageerrorstate:'Contain at least one uppercase letter'})
    
-    } else if (this.state.passwordmessagestate.search(/[!@#$%^&*]/) == -1) {
-        this.setState({passwordmessageerrorstate:'Contain at least one Special character'})
-    
+    // } else if (this.state.passwordmessagestate.search(/[!@#$%^&*]/) == -1) {
+    //     this.setState({passwordmessageerrorstate:'Contain at least one Special character'})
+
+    if (this.state.passwordmessagestate.length < 6) {
+      this.setState({passwordmessageerrorstate:'Password must be at least 6 characters long'})
     }else{
       const obj = {
         email :this.state.emailmessagestate,
@@ -206,7 +208,7 @@ static getDerivedStateFromProps(props, state) {
 
 
   render() {
-     
+         if(this.state.orientation=='portrait'){
         return (
         
           <SafeAreaView style={styles.wrapper}>
@@ -289,7 +291,7 @@ static getDerivedStateFromProps(props, state) {
             <TouchableOpacity onPress={() => { this.props.navigation.navigate('ForgetPassword')}}>
               <View style={{  alignItems: 'center' }}>
               <Text style={{ color:'red', marginTop: wp('5%'),fontSize:wp('4%') }} >
-                 Forget Password
+                 Forgot Password?
               </Text>
               </View>
             </TouchableOpacity>
@@ -327,6 +329,128 @@ static getDerivedStateFromProps(props, state) {
                      
             
       );
+   }else if(this.state.orientation=='landscape'){
+    return (
+        
+      <SafeAreaView style={styles.wrapper1}>
+          <NavBarDefault onPress={() => this.props.navigation.navigate('LoginOrSignup')}/>
+   
+        <ScrollView style={{backgroundColor:'#ffffff'}}>
+
+        <View style={{flex:1,alignItems:'center'}}>
+                  <Image
+                    style={{width:wp('50%'),height:wp('50%')}}
+                      source={require('../../images/splash.png')}
+                  />
+
+{this.props.loading && <Loading navigation={this.props.navigation} animating={true} />}
+
+                <View style={{alignItems:'center', width: '100%',height: '100%',}}>
+             
+                <TextField
+            label={"Email Address"}
+         //   value={this.state.text}
+           
+            onChangeText={text => {
+              this.setState({emailmessagestate: text });
+            }}
+            fontSize={wp('4%')}
+           
+            error={this.state.emailmessageerrorstate}
+            onFocus={()=>this.focusEmail()}
+            onBlur={()=>this.blurEmail()}
+            baseColor="gray"
+            tintColor="red"
+            containerStyle={{ width: wp('80%')}}
+            formatText={text => {
+              console.log(text);
+              return text;
+            }}
+          />
+        
+
+      <TextField
+            label={"Password"}
+           // value={this.state.text}
+           
+            onChangeText={text => {
+              this.setState({passwordmessagestate: text });
+            }}
+            error={this.state.passwordmessageerrorstate}
+            fontSize={wp('4%')}
+            onFocus={()=>this.focusPassword()}
+            onBlur={()=>this.blurPassword()}
+            secureTextEntry
+            baseColor="gray"
+            tintColor="red"
+            containerStyle={{ width: wp('80%')}}
+            formatText={text => {
+              console.log(text);
+              return text;
+            }}
+          />
+       
+       <Buttons  text="Login" btnfontSize={wp('4%')}
+                      btnbackgroundColor='#D11F2E' 
+                      btnborderColor='#D11F2E'
+                      btntxtncolor="#ffffff"
+                      btnHight={70}
+                      btnMarginRight={wp('10%')}  
+                      btnMarginLeft={wp('10%')} 
+                      onPress={()=>this.btnPress()}/>
+                       {this.state.loginsuccessmessage==''?
+                    null
+                      :
+                      <Text style={{alignContent:'center',color:'red',fontSize:wp('3.5%')}}>
+                       {this.state.loginsuccessmessage}
+                     </Text>
+
+                      }
+                
+
+                             
+        <TouchableOpacity onPress={() => { this.props.navigation.navigate('ForgetPassword')}}>
+          <View style={{  alignItems: 'center' }}>
+          <Text style={{ color:'red', marginTop: wp('5%'),fontSize:wp('4%') }} >
+             Forgot Password?
+          </Text>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => {this.props.navigation.navigate('SignUpfirst') }}>
+          <View style={{ alignItems: 'center',paddingBottom:wp('20%') }}>
+          <Text style={{ color:'grey',fontSize:wp('3%')}} >
+             Don't have an account?
+          </Text>
+          </View>
+        </TouchableOpacity>
+
+                </View>
+
+
+
+             
+                  
+
+
+    
+ 
+                    
+                  </View>
+         
+                
+                
+                
+          
+        </ScrollView>
+                
+                
+         
+                  </SafeAreaView>
+                 
+        
+  );
+   }
      
     
       

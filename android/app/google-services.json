@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "488566739726",
+    "firebase_url": "https://rcp-smart-app.firebaseio.com",
+    "project_id": "rcp-smart-app",
+    "storage_bucket": "rcp-smart-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488566739726:android:c13517b1296beb77b7bd5f",
+        "android_client_info": {
+          "package_name": "com.rubbermaidapps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "488566739726-isnqvvic22tig8sghs3afaae7chfnot9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rubbermaidapps",
+            "certificate_hash": "e274926f117eb563b876e0522df669359352503c"
+          }
+        },
+        {
+          "client_id": "488566739726-e7botaln533701sajnvuci6fi571vmj3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8WveKrdlEZgqiPcVItXfiJ7Z78ypqYHE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "488566739726-e7botaln533701sajnvuci6fi571vmj3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "488566739726-7dpcfmlmvhg9emlft09otn0lk0jnqql1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.rcp.smartapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

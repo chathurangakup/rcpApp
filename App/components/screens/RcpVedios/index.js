@@ -23,6 +23,7 @@ import { connect } from 'react-redux';
 import Buttons from '../../uiElements/Buttons/RoundButtons'
 import NavBarDefault from '../../uiElements/NavBarDefault';
 const imageWidth = Dimensions.get('window').width;
+import analytics from '@react-native-firebase/analytics';
 
 import homeAction from '../../redux/Home/actions';
 import Loading from '../../uiElements/Loading';
@@ -80,6 +81,7 @@ static getDerivedStateFromProps(props, state) {
 
   
   componentDidMount() {
+    analytics().setCurrentScreen('Videos', 'Videos');
     this.getData()
   }
 
@@ -155,8 +157,8 @@ static getDerivedStateFromProps(props, state) {
                 <TouchableOpacity onPress={()=>imagePress(_id)}>
                 <Image
                         style={{ flex: 1,
-                          width: wp('40%'),
-                          height:  wp('40%'),
+                          width: wp('35%'),
+                          height:  wp('35%'),
                           resizeMode: 'contain'}}
                         source={{uri:'https://smartapprcp.s3-ap-southeast-1.amazonaws.com/'+URL}}
                       >
@@ -164,7 +166,7 @@ static getDerivedStateFromProps(props, state) {
                         <View   style={{
                            width: '100%',
                          
-                            marginTop:10,
+                          
                            justifyContent: 'center',
                            alignItems: 'center',
                            //Here is the trick
@@ -175,9 +177,7 @@ static getDerivedStateFromProps(props, state) {
 
                         </View>
                                        </TouchableOpacity>
-                <View style={{paddingBottom:wp('5%')}}>
-
-                </View>
+               
                  
         </View>
       );

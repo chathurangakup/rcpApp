@@ -19,15 +19,23 @@ export default EStyleSheet.create({
         color: '#FF0000',
         width: '80%'
       },
+
+      thumbnail1: {
+        flex:1,
+      
+       
+        width: wp('95%'),
+       
+      },
      
       thumbnail: {
         justifyContent: 'center',
         alignItems: 'center',
         height:wp('60%'),
-        width: wp('95%'),
+        width: wp('97%'),
         marginHorizontal: 10,
         marginVertical: 10,
-        marginRight:wp('3%')
+      
       },
     container: {
       flex: 1,

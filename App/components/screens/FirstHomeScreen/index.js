@@ -14,6 +14,7 @@ import {
   OutlinedTextField,
 } from 'react-native-material-textfield';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import analytics from '@react-native-firebase/analytics';
 
 import Buttons from '../../uiElements/Buttons/RoundButtons'
 import NavBarDefault from '../../uiElements/NavBarDefault';
@@ -94,7 +95,9 @@ class LoginOrSignup extends Component {
                         source={require('../../images/splash.png')}
                     />
                           
-                    <TouchableOpacity onPress={()=>this.props.navigation.navigate('RcpVedios')}>
+                    <TouchableOpacity onPress={()=>
+                    this.props.navigation.navigate('RcpVedios')
+                 }>
                     <Image
                       style={{width:wp('70%'),height:wp('40%')}}
                         source={require('../../images/RCPvideo.png')}
@@ -128,7 +131,7 @@ class LoginOrSignup extends Component {
      }else if(this.state.orientation=='landscape'){
       return (
         
-        <SafeAreaView style={styles.wrapper}>
+        <SafeAreaView style={styles.wrapper1}>
     
      
           <ScrollView>

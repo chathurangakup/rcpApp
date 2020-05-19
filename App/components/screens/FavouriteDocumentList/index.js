@@ -43,7 +43,7 @@ function Item({ name, thumbnail,onPress,description,onPressStar,onpressrenderVie
   const imgurl='https://smartapprcp.s3-ap-southeast-1.amazonaws.com/'+thumbnail;
   return (
     
-      <View>
+      <View style={styles.thumbnail1}>
         <TouchableOpacity onPress={onPress}>
           <ImageBackground style={styles.thumbnail}  source={{uri: imgurl}}>
                

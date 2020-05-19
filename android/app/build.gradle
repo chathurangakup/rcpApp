@@ -75,12 +75,15 @@ import com.android.build.OutputFile
  * ]
  */
 
+ 
+
 project.ext.react = [
     entryFile: "index.js",
     enableHermes: false,  // clean and rebuild if changing
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
+//com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -141,8 +144,10 @@ android {
         applicationId "com.rubbermaidapps"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 4
-        versionName "4.0"
+        multiDexEnabled true
+        versionCode 7
+        versionName "7.0"
+       
     }
     splits {
         abi {
@@ -202,6 +207,10 @@ dependencies {
     implementation project(':react-native-vector-icons')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
+   //  implementation "com.google.firebase:firebase-analytics:17.2.2"
+    //implementation "com.google.android.gms:play-services-base:17.2.2"
+    // def multidex_version = "2.0.1"
+    // implementation 'androidx.multidex:multidex:$multidex_version'
 
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";
@@ -218,5 +227,5 @@ task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
 }
-
+apply plugin: 'com.google.gms.google-services'
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)

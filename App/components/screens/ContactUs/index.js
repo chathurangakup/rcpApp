@@ -129,7 +129,7 @@ static getDerivedStateFromProps(props, state) {
 startInLoadingState={true}
   onLoad={() => this.hideSpinner()}
   style={{ flex: 1 }}
-  source={{ uri: 'https://www.rubbermaidcommercial.com/contact-us/' }}
+  source={{ uri: 'https://launch-app.rcpanz.com/contactus/' }}
 />
 {/* {this.state.visible && (
   <ActivityIndicator

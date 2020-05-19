@@ -94,7 +94,8 @@ class VedioPlayer extends Component {
       videoUrl:'',
       accesstokenstate:'',
       isselectstar:'star',
-      isfavourite:'yes'
+      isfavourite:'yes',
+      vedionamestate:''
     };
 
     const isPortrait = () => {
@@ -121,6 +122,7 @@ class VedioPlayer extends Component {
    
    console.log(props.vedioPlayerListResult)
    if(props.vedioPlayerListResult!=undefined){
+        state.vedionamestate=props.vedioPlayerListResult.details.name;
         state.mainvediourl=props.vedioPlayerListResult.details.url;
         state.isfavourite=props.vedioPlayerListResult.details.favourite;
         
@@ -351,18 +353,27 @@ renderViewLess(onPress){
         <NavBarDefault name={'Videos'} onPress={() => this.props.navigation.navigate('FavouriteVedioList')}/>
        <View style={styles.container}>
        {this.props.loading && <Loading navigation={this.props.navigation} animating={true} />}
-       <View style={{position:'absolute',right:0,marginTop:0,marginRight:10,zIndex:1,height:wp('20%'),width:wp('20%')}}>
-                     <Icon name={this.state.isselectstar}
-                             size={wp('10%')}
-                            color='black'
-                            onPress={()=>this.onPressStar()}
-                            style={{
-                            position: 'absolute',
-                            right: 10,
-                            top: 10,
-                            bottom: 0
-                        }} />
-        </View>
+       <View style={{flexDirection: 'row'}}>
+            <View style={{flex:1.5,  backgroundColor: 'white',paddingLeft:wp('3%')}} >
+            <Text style={{fontSize:wp('5%'),fontWeight:"bold"}}>{this.state.vedionamestate}</Text>
+            </View>
+          
+          </View>
+
+          <View style={{position:'absolute',right:0,marginTop:wp('1%'),marginRight:wp('3%'),zIndex:1,height:wp('20%'),width:wp('20%')}} >
+            <Icon 
+                          name={this.state.isselectstar}
+                          size={wp('10%')}
+                          color='black'
+                          onPress={()=>this.onPressStar()}
+                          style={{
+                              position: 'absolute',
+                              right:0,
+                              top: 10,
+                              bottom: 0
+                          }} 
+                    />
+            </View>
         <WebView
                 ref="webviewBridge"
                 originWhitelist={['*']}
@@ -427,7 +438,7 @@ renderViewLess(onPress){
           renderItem={({ item }) => 
           <Item 
           title={item.name}
-           url={item.thumbnail_medium}
+           url={item.thumbnail_large}
            isfavourite={item.favourite}
            onpressrenderViewLess={this.renderViewLess}
            onpressrenderViewMore={this.renderViewMore}
@@ -450,7 +461,13 @@ renderViewLess(onPress){
       <NavBarDefault   name={'Videos'}  onPress={() => this.props.navigation.navigate('FavouriteVedioList')}/>
      <View style={styles.container}>
      {this.props.loading && <Loading navigation={this.props.navigation} animating={true} />}
-     <View style={{position:'absolute',right:0,marginTop:0,marginRight:10,zIndex:1,height:wp('20%'),width:wp('20%')}}>
+     <View style={{flexDirection: 'row'}}>
+            <View style={{flex:1.5,  backgroundColor: 'white',paddingLeft:wp('3%')}} >
+            <Text style={{fontSize:wp('5%'),fontWeight:"bold"}}>{this.state.vedionamestate}</Text>
+            </View>
+          
+          </View>
+     <View style={{position:'absolute',right:0,marginTop:wp('5%'),marginRight:wp('3%'),zIndex:1,height:wp('20%'),width:wp('20%')}}>
                    <Icon name={this.state.isselectstar}
                            size={wp('10%')}
                           color='black'

@@ -26,7 +26,7 @@ const {getVedioPlayerList,selecthomeFavouriteVedio,clearProps} = homeAction;
 
 function Item({ title,descrption, url,onPress,isfavourite,onPressStar,onpressrenderViewMore,onpressrenderViewLess}) {
   return (
-      <View>
+      <View  style={styles.thumbnail1}>
           <TouchableOpacity onPress={onPress} >
           <ImageBackground style={styles.thumbnail}  source={{uri: url}}>
                
@@ -92,6 +92,7 @@ class VedioPlayer extends Component {
       videoUrl:'',
       accesstokenstate:'',
       isselectstar:'',
+      vedionamestate:'',
 
       orientation:''
     };
@@ -120,6 +121,7 @@ class VedioPlayer extends Component {
    
    console.log(props.vedioPlayerListResult)
    if(props.vedioPlayerListResult!=undefined){
+        state.vedionamestate=props.vedioPlayerListResult.details.name;
         state.mainvediourl=props.vedioPlayerListResult.details.url;
         state.isfavourite=props.vedioPlayerListResult.details.favourite;
         
@@ -346,7 +348,9 @@ if(this.state.orientation=='portrait'){
       <NavBarDefault  name={'Videos'} onPress={() => this.props.navigation.navigate('RcpVedioList')}/>
      <View style={styles.container}>
      {this.props.loading && <Loading navigation={this.props.navigation} animating={true} />}
-     <View style={{position:'absolute',right:0,marginTop:0,marginRight:10,zIndex:1,height:wp('20%'),width:wp('20%')}}>
+   
+     
+      {/* <View style={{position:'absolute',right:0,marginTop:wp('1%'),marginRight:wp('3%'),zIndex:1,height:wp('20%'),width:wp('20%')}}>
                    <Icon 
                           name={this.state.isselectstar}
                           size={wp('10%')}
@@ -354,19 +358,44 @@ if(this.state.orientation=='portrait'){
                           onPress={()=>this.onPressStar()}
                           style={{
                               position: 'absolute',
-                              right: 10,
+                              right:0,
                               top: 10,
                               bottom: 0
                           }} 
                     />
-      </View>
+                  
+      </View> */}
+     {/* <View style={{padding:wp('1%'),backgroundColor:'white'}}>
+                        <Text style={{fontSize:wp('4%'),fontWeight:"bold"}}>{this.state.vedionamestate}</Text>
+     </View> */}
+ <View style={{flexDirection: 'row'}}>
+            <View style={{flex:1.5,  backgroundColor: 'white',paddingLeft:wp('3%')}} >
+            <Text style={{fontSize:wp('5%'),fontWeight:"bold"}}>{this.state.vedionamestate}</Text>
+            </View>
+          
+          </View>
+
+          <View style={{position:'absolute',right:0,marginTop:wp('1%'),marginRight:wp('3%'),zIndex:1,height:wp('20%'),width:wp('20%')}} >
+            <Icon 
+                          name={this.state.isselectstar}
+                          size={wp('10%')}
+                          color='black'
+                          onPress={()=>this.onPressStar()}
+                          style={{
+                              position: 'absolute',
+                              right:0,
+                              top: 10,
+                              bottom: 0
+                          }} 
+                    />
+            </View>
       <WebView
               ref="webviewBridge"
               originWhitelist={['*']}
               style={{
                   // Accounts for player border
                   marginTop: 8,
-                  marginLeft: -10,
+                  marginLeft: 0,
               }}
                  source={{ uri: this.state.mainvediourl,
                  headers: {
@@ -410,14 +439,14 @@ if(this.state.orientation=='portrait'){
       /> */}
       
     </View>
-      <View style={{flex:1,padding:10}}>
+      <View style={{flex:1,padding:0}}>
       <FlatList
           data={vedioResultdate}
         
           renderItem={({ item }) => 
           <Item 
             title={item.name}
-             url={item.thumbnail_medium}
+             url={item.thumbnail_large}
              descrption={item.description}
              onpressrenderViewLess={this.renderViewLess}
              onpressrenderViewMore={this.renderViewMore}
@@ -441,7 +470,14 @@ if(this.state.orientation=='portrait'){
       <NavBarDefault  name={'Videos'}  onPress={() => this.props.navigation.navigate('RcpVedioList')}/>
      <View style={styles.container}>
      {this.props.loading && <Loading navigation={this.props.navigation} animating={true} />}
-     <View style={{position:'absolute',right:0,marginTop:0,marginRight:10,zIndex:1,height:50,width:50}}>
+     <View style={{flexDirection: 'row'}}>
+            <View style={{flex:1.5,  backgroundColor: 'white',paddingLeft:wp('3%')}} >
+            <Text style={{fontSize:wp('5%'),fontWeight:"bold"}}>{this.state.vedionamestate}</Text>
+            </View>
+          
+          </View>
+
+     <View style={{position:'absolute',right:0,marginTop:wp('5%'),marginRight:wp('3%'),zIndex:1,height:wp('20%'),width:wp('20%')}}>
                    <Icon 
                           name={this.state.isselectstar}
                           size={wp('10%')}

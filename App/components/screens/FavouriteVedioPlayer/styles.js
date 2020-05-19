@@ -51,12 +51,12 @@ export default EStyleSheet.create({
   },
   thumbnail: {
     height:wp('60%'),
-    width: wp('95%'),
+    width: wp('96%'),
     marginHorizontal: 10,
     marginVertical: 10,
     alignSelf:'center',
     resizeMode: 'contain',
-    marginRight:wp('3%')
+    marginRight:wp('1%')
   },
   title: {
     marginHorizontal: 10,

@@ -13,6 +13,7 @@ import { PropTypes } from 'prop-types';
 import NetInfo from "@react-native-community/netinfo";
 import AsyncStorage from '@react-native-community/async-storage';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import analytics from '@react-native-firebase/analytics';
 
 import styles from './styles';
 
@@ -22,7 +23,6 @@ const imageWidth = Dimensions.get('window').width;
 class StartScreen extends Component {
   constructor(props) {
     super(props);
-  
     this.state = {
       Alert_Visibility: false 
      }
@@ -44,7 +44,6 @@ class StartScreen extends Component {
   }
 
   btnPress(){
-
     NetInfo.fetch().then(state => {
           if(state.isConnected==true){
             //this.props.navigation.navigate('WebView')
@@ -57,7 +56,7 @@ class StartScreen extends Component {
 
   componentDidMount() {
    // StatusBar.setHidden(true);
-
+   analytics().setAnalyticsCollectionEnabled(true)
      setTimeout( () => {
       console.log('TIME IS UP1');
       NetInfo.fetch().then(state => {

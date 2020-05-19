@@ -11,21 +11,30 @@ export default EStyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#fff',
-    paddingTop: 30,
+    paddingTop: wp('2%'),
 },
 thumbnail: {
   flex:1,
 
   height:wp('60%'),
-  width: wp('95%'),
+  width: wp('90%'),
   marginHorizontal: 10,
   marginVertical: 10,
   alignSelf:'center',
   resizeMode: 'contain',
-  marginRight:wp('3%')
+  marginRight:wp('1%')
+},
+thumbnail1: {
+  flex:1,
+
+ 
+  width: wp('95%'),
+ 
 },
 title: {
+  width: wp('90%'),
   marginHorizontal: 10,
+
   fontSize: wp('5%'),
   fontWeight:'bold',
     color: 'gray', 

@@ -102,7 +102,7 @@ class App extends React.Component {
       <SafeAreaView style={{flex:1}}>
           <NavBarDefault name={'Product Use Manuals'}  onPress={() => this.props.navigation.navigate('FavouriteDocumentList')}/>
           {this.props.loading && <Loading navigation={this.props.navigation} animating={true} />}
-          <View style={{position:'absolute',right:0,marginTop:60,marginRight:10,zIndex:1,height:50}}>
+          <View style={{position:'absolute',right:0,marginTop:60,marginRight:10,zIndex:1,height:wp('10%')}}>
           <Icon name={this.state.isselectstar}
                              size={wp('8%')}
                             color='black'

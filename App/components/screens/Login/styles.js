@@ -7,7 +7,12 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 
 export default EStyleSheet.create({
   wrapper:{
-    backgroundColor:'white'
+    backgroundColor:'white',
+    height:hp('100%')
+  },
+  wrapper1:{
+    backgroundColor:'white',
+ 
   },
     textStyle: {
         height: wp('40%'),

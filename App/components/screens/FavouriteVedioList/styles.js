@@ -13,6 +13,14 @@ export default EStyleSheet.create({
     backgroundColor: '#fff',
     paddingTop: 30,
 },
+thumbnail1: {
+  flex:1,
+
+ 
+  width: wp('95%'),
+ 
+},
+
 thumbnail: {
  
   height:wp('60%'),

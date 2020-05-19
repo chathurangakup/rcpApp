@@ -41,7 +41,7 @@ import styles from './styles';
 function Item({ name, _url,onPress,description,onPressStar,onpressrenderViewMore,onpressrenderViewLess }) {
   return (
     
-      <View>
+      <View style={styles.thumbnail1}>
         <TouchableOpacity onPress={onPress}>
           <ImageBackground style={styles.thumbnail}  source={{uri: _url}}>
                
@@ -240,7 +240,7 @@ class VideoList extends React.Component {
                name={item.name}
                onpressrenderViewLess={this.renderViewLess}
                onpressrenderViewMore={this.renderViewMore}
-               _url={item.thumbnail_medium} 
+               _url={item.thumbnail_large} 
                onPressStar={()=>this.deselectVedio(item.id)}
                onPress={()=>this.goVedio(item.id,item.category_id)} />}
                keyExtractor={item => item.id}

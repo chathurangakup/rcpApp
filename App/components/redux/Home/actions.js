@@ -69,23 +69,25 @@ const actions = {
 
 
 
-  getPdfList:(access_token,categoryid,productid,searchtext,orderby)=>({
+  getPdfList:(access_token,categoryid,productid,searchtext,orderby,pageno)=>({
     type: actions.GET_PDF_LIST,
      access_token,
      categoryid,
      searchtext,
      productid,
-     orderby
+     orderby,
+     pageno
    }),
 
 
-  getVideoList:(access_token,categoryid,productid,searchtext,orderby)=>({
+  getVideoList:(access_token,categoryid,productid,searchtext,orderby,pageno)=>({
    type: actions.GET_VIDEO_LIST,
     access_token,
     categoryid,
     searchtext,
     productid,
-    orderby
+    orderby,
+    pageno
     
 
   }),

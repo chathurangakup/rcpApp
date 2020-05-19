@@ -49,6 +49,7 @@ static getDerivedStateFromProps(props, state) {
      if(props.fogetPasswordResult!=undefined){
       if(props.fogetPasswordResult=='error'){
             alert('Email is not registered');
+            props.dispatch(clearProps())
       }
       if(props.fogetPasswordResult=='success'){
       props.navigation.navigate('VerificationCode')
@@ -114,7 +115,7 @@ static getDerivedStateFromProps(props, state) {
         return (
         
           <SafeAreaView style={styles.wrapper}>
-              <NavBarDefault  name="Foget Password" onPress={() => this.props.navigation.navigate('LoginOrSignup')}/>
+              <NavBarDefault  name="Forgot Password" onPress={() => this.props.navigation.navigate('LoginOrSignup')}/>
        
               <ScrollView style={{backgroundColor:'#ffffff',height:'100%'}}>
 
@@ -124,6 +125,12 @@ static getDerivedStateFromProps(props, state) {
                         style={{width:wp('50%'),height:wp('50%')}}
                           source={require('../../images/splash.png')}
                       />
+                      <Text style={{fontWeight:'bold',fontSize:wp('3.5%')}}>Reset Your Password</Text>
+                      <View style={{padding:wp('3%')}}>
+                      <Text style={{justifyContent:'center',fontSize:wp('3%')}}>Enter your email address below and we’ll 
+                      send you a verification code to reset your password</Text>
+                      </View>
+                   
 
    {this.props.loading && <Loading navigation={this.props.navigation} animating={true} />}
 
@@ -153,7 +160,7 @@ static getDerivedStateFromProps(props, state) {
     
     <View style={{paddingTop:wp('5%')}}>
            
-           <Buttons  text="Send Email" btnfontSize={wp('5%')}
+           <Buttons  text="Reset Password" btnfontSize={wp('5%')}
                           btnbackgroundColor='#D11F2E' 
                           btnborderColor='#D11F2E'
                           btntxtncolor="#ffffff"

@@ -225,7 +225,7 @@ static getDerivedStateFromProps(props, state) {
    }else if(this.state.organizationstate==''){
     this.setState({organizationerrorstate:'Organization  is empty'})
    }else if(this.state.industraiidstate==''){
-    this.setState({industraiiderrorstate:'INDUSTRIAL  is empty'})
+    this.setState({industraiiderrorstate:'Industrial  is empty'})
    }else{
 
     if(this.state.emailerrorstate!=''){
@@ -540,13 +540,16 @@ inputContainerStyle={{ borderBottomWidth: 2,borderBottomColor:'black', }}
                                 inputContainerStyle={{ borderBottomColor: 'transparent' }}
                                 onChangeText={(value,index,data) => this.setState({industraiidstate:data[index].id})}
                             />
-           {this.state.industraiidstate==''?
+                            <View style={{alignSelf:'flex-start',paddingLeft:wp('10%')}}>
+                            {this.state.industraiidstate==''?
          <Text style={{color:'red'}}>
              {this.state.industraiiderrorstate}
       </Text>:
            null
            
           }
+                  </View>
+          
       
 
                   

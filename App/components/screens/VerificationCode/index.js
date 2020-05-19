@@ -132,7 +132,7 @@ class ForgeVerificationCode extends Component {
         return (
         
           <SafeAreaView style={styles.wrapper}>
-               <NavBarDefault name={'Verification code'}  onPress={() => this.props.navigation.navigate('ForgetPassword')}/>
+               <NavBarDefault name={'Forgot Password'}  onPress={() => this.props.navigation.navigate('ForgetPassword')}/>
             <ScrollView>
 
             <View style={{flex:3,alignItems:'center'}}>
@@ -146,9 +146,9 @@ class ForgeVerificationCode extends Component {
 
                     <View style={{flex:1,alignItems:'center', width: '100%',}}>
 
-                      <View style={{padding:15}}>
+                      <View style={{padding:wp('4%')}}>
                       <Text style={{fontSize:wp('4%')}}>
-                        Please enter verification code
+                      Please enter verification code
                       </Text>
                       </View>
                       
@@ -174,7 +174,7 @@ class ForgeVerificationCode extends Component {
 
 <View style={{flex:1,marginTop:wp('10%'),marginBottom:wp('5%')}}>
 
-<Buttons  text="Send Email" btnfontSize={wp('5%')}
+<Buttons  text="Reset Password" btnfontSize={wp('5%')}
                           btnbackgroundColor={this.state.btnColor}
                           btnborderColor={this.state.btnColor}
                           btntxtncolor="#ffffff"

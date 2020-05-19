@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0034698C34E64BD08DE354B7 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83FCA04EC311436BAB913D55 /* Ionicons.ttf */; };
 		00E356F31AD99517003FC87E /* RubbermaidappsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RubbermaidappsTests.m */; };
-		0293B6D6A670DF4D39A84319 /* libPods-Rubbermaidapps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD4EBF079A02C8E4C6AC5F9 /* libPods-Rubbermaidapps.a */; };
+		018049E3B6C4171740EAC3D9 /* libPods-Smart App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 544B4CD9ABCBA034C5BAA2DA /* libPods-Smart App.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -26,6 +26,7 @@
 		5AC26DFA5F1043C4BF92F71B /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 413387170D104A54AE942209 /* Fontisto.ttf */; };
 		71B65D1AE95E4ABCB1099A17 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD2C01F7B8E74DC597A4007A /* EvilIcons.ttf */; };
 		75BC88252D94450B9B2E2931 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D2D366359444D3A832E3EE9 /* MaterialIcons.ttf */; };
+		84CFC9E124509AF200A3E411 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84CFC9E024509AF200A3E411 /* GoogleService-Info.plist */; };
 		8B72E2AA171D4721905110CB /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78299582EEFF4E97B2173D0D /* AntDesign.ttf */; };
 		8E42AE4328B4DD3477242CB5 /* libPods-Rubbermaidapps-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 764FD536C08015E63B33B068 /* libPods-Rubbermaidapps-tvOSTests.a */; };
 		96751498B68040E694B4545B /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C37F9FD35B045C5806327F4 /* FontAwesome5_Regular.ttf */; };
@@ -53,6 +54,13 @@
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
 			remoteInfo = "Rubbermaidapps-tvOS";
 		};
+		8467131324688BD500155E51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
+			remoteInfo = "Smart App";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -64,7 +72,7 @@
 		0D3E0B879182830BCED5BDE0 /* Pods-Rubbermaidapps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rubbermaidapps.release.xcconfig"; path = "Target Support Files/Pods-Rubbermaidapps/Pods-Rubbermaidapps.release.xcconfig"; sourceTree = "<group>"; };
 		0E3E521CB78022A32523745D /* Pods-RubbermaidappsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RubbermaidappsTests.release.xcconfig"; path = "Target Support Files/Pods-RubbermaidappsTests/Pods-RubbermaidappsTests.release.xcconfig"; sourceTree = "<group>"; };
 		0E99E07E741D3E8C76D9BDE5 /* Pods-Rubbermaidapps-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rubbermaidapps-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Rubbermaidapps-tvOS/Pods-Rubbermaidapps-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* Rubbermaidapps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rubbermaidapps.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* Smart App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Rubbermaidapps/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Rubbermaidapps/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -72,16 +80,19 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Rubbermaidapps/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Rubbermaidapps/main.m; sourceTree = "<group>"; };
 		1D2D366359444D3A832E3EE9 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		25D6CC18449DC3864962D953 /* Pods-Smart App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart App.debug.xcconfig"; path = "Target Support Files/Pods-Smart App/Pods-Smart App.debug.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* Rubbermaidapps-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rubbermaidapps-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Rubbermaidapps-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rubbermaidapps-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32498EA45DBB4E5D8A669DA2 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		3500D27008C186F4BCE49DA8 /* Pods-Rubbermaidapps-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rubbermaidapps-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Rubbermaidapps-tvOSTests/Pods-Rubbermaidapps-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		413387170D104A54AE942209 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
+		4523F50A7CB9B3F8E56BC928 /* Pods-Smart App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart App.release.xcconfig"; path = "Target Support Files/Pods-Smart App/Pods-Smart App.release.xcconfig"; sourceTree = "<group>"; };
+		544B4CD9ABCBA034C5BAA2DA /* libPods-Smart App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smart App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A4571C9543FEC30464EA80B /* Pods-Rubbermaidapps-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rubbermaidapps-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Rubbermaidapps-tvOSTests/Pods-Rubbermaidapps-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5BD4EBF079A02C8E4C6AC5F9 /* libPods-Rubbermaidapps.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Rubbermaidapps.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		764FD536C08015E63B33B068 /* libPods-Rubbermaidapps-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Rubbermaidapps-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78299582EEFF4E97B2173D0D /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		83FCA04EC311436BAB913D55 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		84CFC9E024509AF200A3E411 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8DB031EA8300E25052496CB1 /* libPods-RubbermaidappsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RubbermaidappsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96A46233A006428495F62469 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		9B10775EC048497EBA2FAACF /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
@@ -114,7 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0293B6D6A670DF4D39A84319 /* libPods-Rubbermaidapps.a in Frameworks */,
+				018049E3B6C4171740EAC3D9 /* libPods-Smart App.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +168,7 @@
 		13B07FAE1A68108700A75B9A /* Rubbermaidapps */ = {
 			isa = PBXGroup;
 			children = (
+				84CFC9E024509AF200A3E411 /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -173,10 +185,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				5BD4EBF079A02C8E4C6AC5F9 /* libPods-Rubbermaidapps.a */,
 				EA0B7907E4AE74A3B7FE9674 /* libPods-Rubbermaidapps-tvOS.a */,
 				764FD536C08015E63B33B068 /* libPods-Rubbermaidapps-tvOSTests.a */,
 				8DB031EA8300E25052496CB1 /* libPods-RubbermaidappsTests.a */,
+				544B4CD9ABCBA034C5BAA2DA /* libPods-Smart App.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -192,6 +204,8 @@
 				3500D27008C186F4BCE49DA8 /* Pods-Rubbermaidapps-tvOSTests.release.xcconfig */,
 				D3BE8BD2F08301CC53F3B0D8 /* Pods-RubbermaidappsTests.debug.xcconfig */,
 				0E3E521CB78022A32523745D /* Pods-RubbermaidappsTests.release.xcconfig */,
+				25D6CC18449DC3864962D953 /* Pods-Smart App.debug.xcconfig */,
+				4523F50A7CB9B3F8E56BC928 /* Pods-Smart App.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -222,7 +236,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* Rubbermaidapps.app */,
+				13B07F961A680F5B00A75B9A /* Smart App.app */,
 				00E356EE1AD99517003FC87E /* RubbermaidappsTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* Rubbermaidapps-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* Rubbermaidapps-tvOSTests.xctest */,
@@ -275,9 +289,9 @@
 			productReference = 00E356EE1AD99517003FC87E /* RubbermaidappsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* Rubbermaidapps */ = {
+		13B07F861A680F5B00A75B9A /* Smart App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Rubbermaidapps" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Smart App" */;
 			buildPhases = (
 				E8D6EDBC4C926B04B522BA93 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -286,14 +300,15 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				CBDD7E32BC7D1760EDCE77E8 /* [CP] Copy Pods Resources */,
+				9904A3CC635F4D0FE698FA29 /* [CP-User] [RNFB] Core Configuration */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Rubbermaidapps;
+			name = "Smart App";
 			productName = Rubbermaidapps;
-			productReference = 13B07F961A680F5B00A75B9A /* Rubbermaidapps.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* Smart App.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2D02E47A1E0B4A5D006451C7 /* Rubbermaidapps-tvOS */ = {
@@ -329,6 +344,7 @@
 			);
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
+				8467131424688BD500155E51 /* PBXTargetDependency */,
 			);
 			name = "Rubbermaidapps-tvOSTests";
 			productName = "Rubbermaidapps-tvOSTests";
@@ -359,7 +375,7 @@
 					2D02E48F1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 2D02E47A1E0B4A5D006451C7;
+						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 				};
 			};
@@ -377,7 +393,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* Rubbermaidapps */,
+				13B07F861A680F5B00A75B9A /* Smart App */,
 				00E356ED1AD99517003FC87E /* RubbermaidappsTests */,
 				2D02E47A1E0B4A5D006451C7 /* Rubbermaidapps-tvOS */,
 				2D02E48F1E0B4A5D006451C7 /* Rubbermaidapps-tvOSTests */,
@@ -408,6 +424,7 @@
 				96751498B68040E694B4545B /* FontAwesome5_Regular.ttf in Resources */,
 				DF9DCEB64A514F0481C164DB /* FontAwesome5_Solid.ttf in Resources */,
 				5AC26DFA5F1043C4BF92F71B /* Fontisto.ttf in Resources */,
+				84CFC9E124509AF200A3E411 /* GoogleService-Info.plist in Resources */,
 				D09457E9497449409292337F /* Foundation.ttf in Resources */,
 				0034698C34E64BD08DE354B7 /* Ionicons.ttf in Resources */,
 				F430F5F4992C408CAFA7DEEA /* MaterialCommunityIcons.ttf in Resources */,
@@ -508,6 +525,16 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9904A3CC635F4D0FE698FA29 /* [CP-User] [RNFB] Core Configuration */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] [RNFB] Core Configuration";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/usr/bin/env bash\n#\n# Copyright (c) 2016-present Invertase Limited & Contributors\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this library except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#   http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\nset -e\n\n_MAX_LOOKUPS=2;\n_SEARCH_RESULT=''\n_RN_ROOT_EXISTS=''\n_CURRENT_LOOKUPS=1\n_JSON_ROOT=\"'react-native'\"\n_JSON_FILE_NAME='firebase.json'\n_JSON_OUTPUT_BASE64='e30=' # { }\n_CURRENT_SEARCH_DIR=${PROJECT_DIR}\n_PLIST_BUDDY=/usr/libexec/PlistBuddy\n_TARGET_PLIST=\"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}\"\n_DSYM_PLIST=\"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist\"\n\n# plist arrays\n_PLIST_ENTRY_KEYS=()\n_PLIST_ENTRY_TYPES=()\n_PLIST_ENTRY_VALUES=()\n\nfunction setPlistValue {\n  echo \"info:      setting plist entry '$1' of type '$2' in file '$4'\"\n  ${_PLIST_BUDDY} -c \"Add :$1 $2 '$3'\" $4 || echo \"info:      '$1' already exists\"\n}\n\nfunction getFirebaseJsonKeyValue () {\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    ruby -e \"require 'rubygems';require 'json'; output=JSON.parse('$1'); puts output[$_JSON_ROOT]['$2']\"\n  else\n    echo \"\"\n  fi;\n}\n\nfunction jsonBoolToYesNo () {\n  if [[ $1 == \"false\" ]]; then\n    echo \"NO\"\n  elif [[ $1 == \"true\" ]]; then\n    echo \"YES\"\n  else echo \"NO\"\n  fi\n}\n\necho \"info: -> RNFB build script started\"\necho \"info: 1) Locating ${_JSON_FILE_NAME} file:\"\n\nif [[ -z ${_CURRENT_SEARCH_DIR} ]]; then\n  _CURRENT_SEARCH_DIR=$(pwd)\nfi;\n\nwhile true; do\n  _CURRENT_SEARCH_DIR=$(dirname \"$_CURRENT_SEARCH_DIR\")\n  if [[ \"$_CURRENT_SEARCH_DIR\" == \"/\" ]] || [[ ${_CURRENT_LOOKUPS} -gt ${_MAX_LOOKUPS} ]]; then break; fi;\n  echo \"info:      ($_CURRENT_LOOKUPS of $_MAX_LOOKUPS) Searching in '$_CURRENT_SEARCH_DIR' for a ${_JSON_FILE_NAME} file.\"\n  _SEARCH_RESULT=$(find \"$_CURRENT_SEARCH_DIR\" -maxdepth 2 -name ${_JSON_FILE_NAME} -print | head -n 1)\n  if [[ ${_SEARCH_RESULT} ]]; then\n    echo \"info:      ${_JSON_FILE_NAME} found at $_SEARCH_RESULT\"\n    break;\n  fi;\n  _CURRENT_LOOKUPS=$((_CURRENT_LOOKUPS+1))\ndone\n\nif [[ ${_SEARCH_RESULT} ]]; then\n  _JSON_OUTPUT_RAW=$(cat \"${_SEARCH_RESULT}\")\n  _RN_ROOT_EXISTS=$(ruby -e \"require 'rubygems';require 'json'; output=JSON.parse('$_JSON_OUTPUT_RAW'); puts output[$_JSON_ROOT]\" || echo '')\n\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    _JSON_OUTPUT_BASE64=$(python -c 'import json,sys,base64;print(base64.b64encode(json.dumps(json.loads(open('\"'${_SEARCH_RESULT}'\"').read())['${_JSON_ROOT}'])))' || echo \"e30=\")\n  fi\n\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n\n  # config.messaging_auto_init_enabled\n  _MESSAGING_AUTO_INIT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"messaging_auto_init_enabled\")\n  if [[ $_MESSAGING_AUTO_INIT ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseMessagingAutoInitEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_MESSAGING_AUTO_INIT\")\")\n  fi\n\n  # config.crashlytics_disable_auto_disabler - undocumented for now - mainly for debugging, document if becomes usful\n  _CRASHLYTICS_AUTO_DISABLE_ENABLED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"crashlytics_disable_auto_disabler\")\n  if [[ $_CRASHLYTICS_AUTO_DISABLE_ENABLED == \"true\" ]]; then\n    echo \"Disabled Crashlytics auto disabler.\" # do nothing\n  else\n    _PLIST_ENTRY_KEYS+=(\"firebase_crashlytics_collection_enabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"NO\")\n  fi\n\n  # config.admob_delay_app_measurement_init\n  _ADMOB_DELAY_APP_MEASUREMENT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"admob_delay_app_measurement_init\")\n  if [[ $_ADMOB_DELAY_APP_MEASUREMENT == \"true\" ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GADDelayAppMeasurementInit\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"YES\")\n  fi\n\n  # config.admob_ios_app_id\n  _ADMOB_IOS_APP_ID=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"admob_ios_app_id\")\n  if [[ $_ADMOB_IOS_APP_ID ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GADApplicationIdentifier\")\n    _PLIST_ENTRY_TYPES+=(\"string\")\n    _PLIST_ENTRY_VALUES+=(\"$_ADMOB_IOS_APP_ID\")\n  fi\nelse\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n  echo \"warning:   A firebase.json file was not found, whilst this file is optional it is recommended to include it to configure firebase services in React Native Firebase.\"\nfi;\n\necho \"info: 2) Injecting Info.plist entries: \"\n\n# Log out the keys we're adding\nfor i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n  echo \"    ->  $i) ${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\"\ndone\n\nfor plist in \"${_TARGET_PLIST}\" \"${_DSYM_PLIST}\" ; do\n  if [[ -f \"${plist}\" ]]; then\n\n    # paths with spaces break the call to setPlistValue. temporarily modify\n    # the shell internal field separator variable (IFS), which normally \n    # includes spaces, to consist only of line breaks\n    oldifs=$IFS\n    IFS=\"\n\"\n\n    for i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n      setPlistValue \"${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\" \"${plist}\"\n    done\n\n    # restore the original internal field separator value\n    IFS=$oldifs\n  else\n    echo \"warning:   A Info.plist build output file was not found (${plist})\"\n  fi\ndone\n\necho \"info: <- RNFB build script finished\"\n\n";
+		};
 		B6562911F3D9FCBD067F8A8F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -536,7 +563,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Rubbermaidapps/Pods-Rubbermaidapps-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Smart App/Pods-Smart App-resources.sh",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -575,7 +602,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rubbermaidapps/Pods-Rubbermaidapps-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Smart App/Pods-Smart App-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E8D6EDBC4C926B04B522BA93 /* [CP] Check Pods Manifest.lock */ = {
@@ -593,7 +620,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Rubbermaidapps-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Smart App-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -680,13 +707,18 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* Rubbermaidapps */;
+			target = 13B07F861A680F5B00A75B9A /* Smart App */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2D02E47A1E0B4A5D006451C7 /* Rubbermaidapps-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
+		};
+		8467131424688BD500155E51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13B07F861A680F5B00A75B9A /* Smart App */;
+			targetProxy = 8467131324688BD500155E51 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -722,7 +754,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rubbermaidapps.app/Rubbermaidapps";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smart App.app/Smart App";
 			};
 			name = Debug;
 		};
@@ -742,55 +774,57 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rubbermaidapps.app/Rubbermaidapps";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smart App.app/Smart App";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6BD28C58A62A9722837E421 /* Pods-Rubbermaidapps.debug.xcconfig */;
+			baseConfigurationReference = 25D6CC18449DC3864962D953 /* Pods-Smart App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 15;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 9HQ2ZX4J85;
 				INFOPLIST_FILE = Rubbermaidapps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 8.0;
+				MARKETING_VERSION = 15.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rcp.smartapp;
-				PRODUCT_NAME = Rubbermaidapps;
+				PRODUCT_NAME = "Smart App";
 				PROVISIONING_PROFILE_SPECIFIER = SmartApp;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D3E0B879182830BCED5BDE0 /* Pods-Rubbermaidapps.release.xcconfig */;
+			baseConfigurationReference = 4523F50A7CB9B3F8E56BC928 /* Pods-Smart App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = 9HQ2ZX4J85;
 				INFOPLIST_FILE = Rubbermaidapps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 8.0;
+				MARKETING_VERSION = 15.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rcp.smartapp;
-				PRODUCT_NAME = Rubbermaidapps;
+				PRODUCT_NAME = "Smart App";
 				PROVISIONING_PROFILE_SPECIFIER = SmartApp;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -873,7 +907,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Rubbermaidapps-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rubbermaidapps-tvOS.app/Rubbermaidapps-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smart App.app/Smart App";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
@@ -900,7 +934,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Rubbermaidapps-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rubbermaidapps-tvOS.app/Rubbermaidapps-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smart App.app/Smart App";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -1016,7 +1050,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Rubbermaidapps" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Smart App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,

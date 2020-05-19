@@ -48,7 +48,7 @@ function Item({ name, thumbnail,onPress,description,isfavourite,onPressStar,onpr
   console.log(isfavourite)
   return (
     
-      <View>
+      <View  style={styles.thumbnail1}>
         <TouchableOpacity onPress={onPress}>
         <ImageBackground style={styles.thumbnail}  source={{uri: imgurl}}>
                {isfavourite=='yes'?
@@ -126,7 +126,10 @@ class PdfList extends React.Component {
     categorystate:'',
     categorynamestate:'All',
     productstate:'all',
-    productnamestate:'All'
+    productnamestate:'All',
+
+    lastpage_state:'',
+    current_page_state:1
     }
   };
 
@@ -148,7 +151,14 @@ class PdfList extends React.Component {
         pdfResultdate=props.pdfListResult
       }
 
-
+      console.log(props.pdfListResultPagination)
+      console.log("props.pdfListResultPagination")
+      if(props.pdfListResultPagination!=undefined){
+        console.log("props.pdfListResultPagination.last_page")
+        state.lastpage_state=props.pdfListResultPagination.last_page;
+       // state.current_page_state=props.vedioListResultPagination.current_page
+    
+      }
   
 
  
@@ -271,7 +281,7 @@ class PdfList extends React.Component {
       const categoryid = await AsyncStorage.getItem('categoryid')
      // alert(categoryid)
         if(accesstoken != null){
-              this.props.dispatch(getPdfList(accesstoken,categoryid,'all','all',''))
+              this.props.dispatch(getPdfList(accesstoken,categoryid,'all','all','',1))
                this.props.dispatch(getCategories(accesstoken))
               this.props.dispatch(getProductsHome(accesstoken))
         }else{
@@ -292,7 +302,7 @@ class PdfList extends React.Component {
       const categoryid = await AsyncStorage.getItem('categoryid')
      // alert(categoryid)
         if(accesstoken != null){
-              this.props.dispatch(getPdfList(accesstoken,categoryid,'all',this.state.search,''))
+              this.props.dispatch(getPdfList(accesstoken,categoryid,'all',this.state.search,'',this.state.current_page_state))
         }else{
           this.props.navigation.navigate('LoginOrSignup')
         }
@@ -352,7 +362,7 @@ class PdfList extends React.Component {
       if(this.state.categorystate==''){
         const categoryid  = await AsyncStorage.getItem('categoryid')
         if(accesstoken != null){
-          this.props.dispatch(getPdfList(accesstoken,categoryid,this.state.productstate,'all',this.state.orderbystate))
+          this.props.dispatch(getPdfList(accesstoken,categoryid,this.state.productstate,'all',this.state.orderbystate,this.state.current_page_state))
          
         }else{
           this.props.navigation.navigate('LoginOrSignup')
@@ -360,7 +370,7 @@ class PdfList extends React.Component {
       }else{
         const categoryid  = this.state.categorystate
         if(accesstoken != null){
-          this.props.dispatch(getPdfList(accesstoken,categoryid,this.state.productstate,'all',this.state.orderbystate))
+          this.props.dispatch(getPdfList(accesstoken,categoryid,this.state.productstate,'all',this.state.orderbystate,this.state.current_page_state))
          
             }else{
               this.props.navigation.navigate('LoginOrSignup')
@@ -391,6 +401,81 @@ class PdfList extends React.Component {
     this.setState({orderbystate:lable});
     this.setState({orderbynamestate:value})
   }
+
+
+  onPressNextBtn=async()=>{
+    if(this.state.lastpage_state>this.state.current_page_state){
+      var i=this.state.current_page_state+1
+      this.setState({current_page_state:i})
+
+      try {
+        const accesstoken = await AsyncStorage.getItem('accesstoken')
+       // alert(this.state.productstate)
+        if(this.state.categorystate==''){
+          const categoryid  = await AsyncStorage.getItem('categoryid')
+          if(accesstoken != null){
+            this.props.dispatch(getPdfList(accesstoken,categoryid,'all','all','',this.state.current_page_state))
+          }else{
+            this.props.navigation.navigate('LoginOrSignup')
+          }
+        }else{
+          const categoryid  = this.state.categorystate
+          if(accesstoken != null){
+            this.props.dispatch(getPdfList(accesstoken,categoryid,'all','all','',this.state.current_page_state))      
+              }else{
+                this.props.navigation.navigate('LoginOrSignup')
+              }
+        }
+       // 
+       // alert(categoryid)
+         
+      } catch(e) {
+        // error reading value
+      }
+
+    }
+
+  }
+
+
+
+  onPressPreviousBtn=async()=>{
+    if(1<this.state.current_page_state){
+      var i=this.state.current_page_state-1
+      this.setState({current_page_state:i})
+
+      try {
+        const accesstoken = await AsyncStorage.getItem('accesstoken')
+       // alert(this.state.productstate)
+        if(this.state.categorystate==''){
+          const categoryid  = await AsyncStorage.getItem('categoryid')
+          if(accesstoken != null){
+            this.props.dispatch(getPdfList(accesstoken,categoryid,'all','all','',this.state.current_page_state))
+          
+          }else{
+            this.props.navigation.navigate('LoginOrSignup')
+          }
+        }else{
+          const categoryid  = this.state.categorystate
+          if(accesstoken != null){
+            this.props.dispatch(getPdfList(accesstoken,categoryid,'all','all','',this.state.current_page_state))
+          
+              }else{
+                this.props.navigation.navigate('LoginOrSignup')
+              }
+        }
+       // 
+       // alert(categoryid)
+         
+      } catch(e) {
+        // error reading value
+      }
+
+    }
+
+  }
+
+
 
 
 
@@ -457,6 +542,29 @@ class PdfList extends React.Component {
      
                 
               }
+
+<View style={{flexDirection:'row',alignItems:'center', position: 'absolute',backgroundColor:'white', //Here is the trick
+    bottom: 0,}}>
+               <View style={{flex:1,height:hp('5%'),alignItems:'flex-start',justifyContent:'center',paddingLeft:wp('5%')}}>
+               <TouchableOpacity onPress={()=>this.onPressPreviousBtn()}>
+               <Text style={{color:'#D11F2E',fontSize:wp('4%')}}>Previous</Text>
+                 </TouchableOpacity>
+                  
+               </View>
+               <View style={{flex:1,alignItems:'center',justifyContent:'center',flexDirection:'row'}}>
+                   <Text style={{fontSize:wp('4%')}}>{this.state.current_page_state} </Text>
+                   <Text style={{fontSize:wp('4%')}}>/</Text>
+                    <Text style={{fontSize:wp('4%')}}> {this.state.lastpage_state}</Text>
+               </View>
+               <View style={{flex:1,alignItems:'flex-end',justifyContent:'center',marginRight:wp('5%')}}>
+                 <TouchableOpacity onPress={()=>this.onPressNextBtn()} >
+                      <Text style={{color:'#D11F2E',fontSize:wp('4%')}}>Next</Text>
+                 </TouchableOpacity>
+                  
+                </View>
+             
+             </View>
+               
                  
               </View>
 
@@ -604,7 +712,8 @@ const mapStateToProps = state =>({
   selecthomeDocumentResult:state.homeReducer.selecthomeDocumentResult,
   pdfListResult:state.homeReducer.pdfListResult,
   loading:state.homeReducer.loading,
-  productsArray:state.homeReducer.productsArray
+  productsArray:state.homeReducer.productsArray,
+  pdfListResultPagination:state.homeReducer.pdfListResultPagination
 
 
 });

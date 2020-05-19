@@ -45,7 +45,7 @@ import styles from './styles';
 function Item({ name, _url,onPress,description,onPressStar,isfavourite,onpressrenderViewMore,onpressrenderViewLess }) {
   return (
     
-      <View>
+      <View style={styles.thumbnail1} >
         <TouchableOpacity onPress={onPress}> 
         <ImageBackground style={styles.thumbnail}  source={{uri: _url}} >
                {isfavourite=='yes'?
@@ -142,7 +142,10 @@ class VideoList extends React.Component {
     productnamestate:'All',
 
     orientation:'',
-    numofcol:''
+    numofcol:'',
+
+    lastpage_state:'',
+    current_page_state:1
 
     }
   };
@@ -174,7 +177,7 @@ class VideoList extends React.Component {
           
            // alert(categoryid)
               if(accesstoken != null){
-                    props.dispatch(getVideoList(accesstoken,categoryid,'all','all',''))
+                    props.dispatch(getVideoList(accesstoken,categoryid,'all','all','',1))
                    
               }else{
                      props.navigation.navigate('LoginOrSignup')
@@ -217,7 +220,14 @@ console.log(props.productsArray)
      
     }
 
+ 
 
+  if(props.vedioListResultPagination!=undefined){
+    console.log(props.vedioListResultPagination.last_page)
+    state.lastpage_state=props.vedioListResultPagination.last_page;
+   // state.current_page_state=props.vedioListResultPagination.current_page
+
+  }
     
 
 
@@ -244,7 +254,7 @@ console.log(props.productsArray)
             
 
           if(accesstoken != null){
-            this.props.dispatch(getVideoList(accesstoken,categoryid,this.state.productstate,'all',this.state.orderbystate))
+            this.props.dispatch(getVideoList(accesstoken,categoryid,this.state.productstate,'all',this.state.orderbystate,this.state.current_page_state))
              this.props.dispatch(getCategories(accesstoken))
             this.props.dispatch(getProductsHome(accesstoken))
             }else{
@@ -256,7 +266,7 @@ console.log(props.productsArray)
           const categoryid = this.state.categorystate
 
           if(accesstoken != null){
-            this.props.dispatch(getVideoList(accesstoken,categoryid,this.state.productstate,'all',this.state.orderbystate))
+            this.props.dispatch(getVideoList(accesstoken,categoryid,this.state.productstate,'all',this.state.orderbystate,this.state.current_page_state))
              this.props.dispatch(getCategories(accesstoken))
             this.props.dispatch(getProductsHome(accesstoken))
             }else{
@@ -283,7 +293,7 @@ console.log(props.productsArray)
       const categoryid = await AsyncStorage.getItem('categoryid')
      // alert(categoryid)
         if(accesstoken != null){
-              this.props.dispatch(getVideoList(accesstoken,categoryid,'all','all',''))
+              this.props.dispatch(getVideoList(accesstoken,categoryid,'all','all','',1))
               this.props.dispatch(getCategories(accesstoken))
               this.props.dispatch(getProductsHome(accesstoken))
         }else{
@@ -304,7 +314,7 @@ console.log(props.productsArray)
       const categoryid = await AsyncStorage.getItem('categoryid')
      // alert(categoryid)
         if(accesstoken != null){
-              this.props.dispatch(getVideoList(accesstoken,categoryid,this.state.productstate,this.state.search,''))
+              this.props.dispatch(getVideoList(accesstoken,categoryid,this.state.productstate,this.state.search,'',1))
         }else{
           this.props.navigation.navigate('LoginOrSignup')
         }
@@ -368,7 +378,7 @@ console.log(props.productsArray)
       if(this.state.categorystate==''){
         const categoryid  = await AsyncStorage.getItem('categoryid')
         if(accesstoken != null){
-          this.props.dispatch(getVideoList(accesstoken,categoryid,this.state.productstate,'all',this.state.orderbystate))
+          this.props.dispatch(getVideoList(accesstoken,categoryid,this.state.productstate,'all',this.state.orderbystate,this.state.current_page_state))
          
         }else{
           this.props.navigation.navigate('LoginOrSignup')
@@ -376,7 +386,7 @@ console.log(props.productsArray)
       }else{
         const categoryid  = this.state.categorystate
         if(accesstoken != null){
-          this.props.dispatch(getVideoList(accesstoken,categoryid,this.state.productstate,'all',this.state.orderbystate))
+          this.props.dispatch(getVideoList(accesstoken,categoryid,this.state.productstate,'all',this.state.orderbystate,this.state.current_page_state))
          
             }else{
               this.props.navigation.navigate('LoginOrSignup')
@@ -408,6 +418,81 @@ console.log(props.productsArray)
     this.setState({orderbynamestate:value})
   }
 
+  onPressNextBtn=async()=>{
+    if(this.state.lastpage_state>this.state.current_page_state){
+      var i=this.state.current_page_state+1
+      this.setState({current_page_state:i})
+
+      try {
+        const accesstoken = await AsyncStorage.getItem('accesstoken')
+       // alert(this.state.productstate)
+        if(this.state.categorystate==''){
+          const categoryid  = await AsyncStorage.getItem('categoryid')
+          if(accesstoken != null){
+            this.props.dispatch(getVideoList(accesstoken,categoryid,'all','all','',this.state.current_page_state))
+           
+          }else{
+            this.props.navigation.navigate('LoginOrSignup')
+          }
+        }else{
+          const categoryid  = this.state.categorystate
+          if(accesstoken != null){
+            this.props.dispatch(getVideoList(accesstoken,categoryid,'all','all','',this.state.current_page_state))
+           
+              }else{
+                this.props.navigation.navigate('LoginOrSignup')
+              }
+        }
+       // 
+       // alert(categoryid)
+         
+      } catch(e) {
+        // error reading value
+      }
+
+    }
+
+  }
+
+
+
+  onPressPreviousBtn=async()=>{
+    if(1<this.state.current_page_state){
+      var i=this.state.current_page_state-1
+      this.setState({current_page_state:i})
+
+      try {
+        const accesstoken = await AsyncStorage.getItem('accesstoken')
+       // alert(this.state.productstate)
+        if(this.state.categorystate==''){
+          const categoryid  = await AsyncStorage.getItem('categoryid')
+          if(accesstoken != null){
+            this.props.dispatch(getVideoList(accesstoken,categoryid,'all','all','',this.state.current_page_state))
+           
+          }else{
+            this.props.navigation.navigate('LoginOrSignup')
+          }
+        }else{
+          const categoryid  = this.state.categorystate
+          if(accesstoken != null){
+            this.props.dispatch(getVideoList(accesstoken,categoryid,'all','all','',this.state.current_page_state))
+           
+              }else{
+                this.props.navigation.navigate('LoginOrSignup')
+              }
+        }
+       // 
+       // alert(categoryid)
+         
+      } catch(e) {
+        // error reading value
+      }
+
+    }
+
+  }
+
+
 
   render() {
 
@@ -429,7 +514,7 @@ console.log(props.productsArray)
            <NavBarDefault name={'Videos'}  onPress={() => this.props.navigation.navigate('RcpVedios')}  onPressStar={()=>this.setState({Alert_Visibility:true})}/>
 
           
-           <View style={{paddingLeft:wp('2%'),paddingRight:wp('2%')}}>
+           <View >
            <SearchBar
             placeholder="Type Here..."
             onChangeText={(txt)=>this.setState({search:txt})}
@@ -476,6 +561,31 @@ renderItem={({ item }) =>
 />
 
 }
+
+
+<View style={{flexDirection:'row',alignItems:'center',position: 'absolute',backgroundColor:'white', //Here is the trick
+    bottom: 0}}>
+               <View style={{flex:1,height:hp('5%'),alignItems:'flex-start',justifyContent:'center',paddingLeft:wp('5%')}}>
+               <TouchableOpacity onPress={()=>this.onPressPreviousBtn()}>
+               <Text style={{color:'#D11F2E',fontSize:wp('4%')}}>Previous</Text>
+                 </TouchableOpacity>
+                  
+               </View>
+               <View style={{flex:1,alignItems:'center',justifyContent:'center',flexDirection:'row'}}>
+                   <Text style={{fontSize:wp('4%')}}>{this.state.current_page_state} </Text>
+                   <Text style={{fontSize:wp('4%')}}>/</Text>
+                    <Text style={{fontSize:wp('4%')}}> {this.state.lastpage_state}</Text>
+               </View>
+               <View style={{flex:1,alignItems:'flex-end',justifyContent:'center',marginRight:wp('5%')}}>
+                 <TouchableOpacity onPress={()=>this.onPressNextBtn()} >
+                      <Text style={{color:'#D11F2E',fontSize:wp('4%')}}>Next</Text>
+                 </TouchableOpacity>
+                  
+                </View>
+             
+             </View>
+
+
   
 </View>
 
@@ -494,7 +604,7 @@ renderItem={({ item }) =>
               isfavourite={item.favourite}
               onpressrenderViewLess={this.renderViewLess}
               onpressrenderViewMore={this.renderViewMore}
-              _url={item.thumbnail_medium} 
+              _url={item.thumbnail_large} 
               onPressStar={()=>this.deselectVedio(item.id)}
               onPress={()=>this.goVedio(item.id)} />}
               keyExtractor={item => item.id}
@@ -503,6 +613,28 @@ renderItem={({ item }) =>
              />
              
              }
+
+             <View style={{flexDirection:'row',alignItems:'center',position: 'absolute',backgroundColor:'white', //Here is the trick
+    bottom: 0}}>
+               <View style={{flex:1,height:hp('5%'),alignItems:'flex-start',justifyContent:'center',paddingLeft:wp('5%')}}>
+               <TouchableOpacity onPress={()=>this.onPressPreviousBtn()}>
+               <Text style={{color:'#D11F2E',fontSize:wp('4%')}}>Previous</Text>
+                 </TouchableOpacity>
+                  
+               </View>
+               <View style={{flex:1,alignItems:'center',justifyContent:'center',flexDirection:'row'}}>
+                   <Text style={{fontSize:wp('4%')}}>{this.state.current_page_state} </Text>
+                   <Text style={{fontSize:wp('4%')}}>/</Text>
+                    <Text style={{fontSize:wp('4%')}}> {this.state.lastpage_state}</Text>
+               </View>
+               <View style={{flex:1,alignItems:'flex-end',justifyContent:'center',marginRight:wp('5%')}}>
+                 <TouchableOpacity onPress={()=>this.onPressNextBtn()} >
+                      <Text style={{color:'#D11F2E',fontSize:wp('4%')}}>Next</Text>
+                 </TouchableOpacity>
+                  
+                </View>
+             
+             </View>
                
              </View>
 
@@ -658,7 +790,8 @@ const mapStateToProps = state =>({
   selecthomeVedioResult:state.homeReducer.selecthomeVedioResult,
   vedioListResult:state.homeReducer.vedioListResult,
   loading:state.homeReducer.loading,
-  productsArray:state.homeReducer.productsArray
+  productsArray:state.homeReducer.productsArray,
+  vedioListResultPagination:state.homeReducer.vedioListResultPagination
 
 
 });

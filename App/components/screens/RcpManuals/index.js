@@ -156,8 +156,8 @@ static getDerivedStateFromProps(props, state) {
                 <TouchableOpacity onPress={()=>imagePress(_id)}>
                   <Image
                         style={{ flex: 1,
-                          width: wp('40%'),
-                          height:  wp('40%'),
+                          width: wp('35%'),
+                          height:  wp('35%'),
                           alignSelf:'center',
                           resizeMode: 'contain'}}
                         source={{uri:'https://smartapprcp.s3-ap-southeast-1.amazonaws.com/'+URL}}
@@ -167,7 +167,7 @@ static getDerivedStateFromProps(props, state) {
                         <View   style={{
                            width: '100%',
                            
-                            marginTop:10,
+                          
                            justifyContent: 'center',
                            alignItems: 'center',
                            //Here is the trick
@@ -180,9 +180,7 @@ static getDerivedStateFromProps(props, state) {
                        
                      
                 </TouchableOpacity>
-                <View style={{paddingBottom:wp('5%')}}>
-
-                </View>
+               
                  
         </View>
       );

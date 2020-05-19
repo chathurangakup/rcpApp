@@ -129,7 +129,7 @@ class LoginOrSignup extends Component {
      
         return (
         
-          <SafeAreaView style={styles.wrapper}>
+          <SafeAreaView style={styles.wrapper1}>
       
        
             <ScrollView>

@@ -77,7 +77,7 @@ class Catelogue extends Component {
 
 
   render() {
-    let source = {uri:'https://s3.us-east-2.amazonaws.com/airbuddyimage/rcp_other/catelogue/RCP%20ANZ%20Catalogue%202018%20hr.pdf'};
+    let source = {uri:'https://smartapprcp.s3.ap-southeast-1.amazonaws.com/rcp_other/catelogue/RCP+ANZ+Catalogue+.pdf'};
         return (
           <SafeAreaView style={{flex:1}}>
             <View style={{padding:15}}>

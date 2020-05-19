@@ -7,6 +7,7 @@ import {
   SafeAreaView,
   ScrollView,
   KeyboardAvoidingView,
+  Linking
 
  
 } from 'react-native';
@@ -74,6 +75,7 @@ class SignupSecond extends Component {
      passworderrorstate:'',
      confirmpasswordstate:'',
      confirmpassworderrorstate:'',
+     confirmpasswordnotmatcherrorstate:'',
      checked1:false,
      checked2:false,
      checked3:false,
@@ -200,13 +202,13 @@ static getDerivedStateFromProps(props, state) {
     }else if(this.state.statenamestate==''){
       this.setState({statenameerorstate:'State name is empty'})
     }else  if(this.state.distributerstate==''){
-      this.setState({distributererrorstate:'Distributer name is empty'})
+      this.setState({distributererrorstate:'Distributor name is empty'})
     }else if(this.state.passwordstate==''){
       this.setState({passworderrorstate:'Password  is empty'})
     }else if(this.state.confirmpasswordstate==''){
-      this.setState({confirmpassworderrorstate:'Confirm password  is empty'})
+      this.setState({confirmpasswordnotmatcherrorstate:'Confirm password  is empty'})
     }else if(this.state.passwordstate!=this.state.confirmpasswordstate){
-      this.setState({confirmpassworderrorstate:'Passwords are not match'})
+      this.setState({confirmpasswordnotmatcherrorstate:'Passwords do not match'})
     }else{
       if (this.state.passwordstate.length < 6) {
         this.setState({confirmpassworderrorstate:'Please Enter new password contain minimum 6 charactors'})
@@ -215,25 +217,26 @@ static getDerivedStateFromProps(props, state) {
       this.setState({confirmpassworderrorstate:'Please Enter new password too long'})
     
     } else if (this.state.passwordstate.search(/\d/) == -1) {
-      this.setState({confirmpassworderrorstate:'Please Enter new password need minimum one number'})
+      this.setState({confirmpassworderrorstate:'Contain at least one number,'})
       
     } else if (this.state.passwordstate.search(/[a-z]/) == -1) {
-      this.setState({confirmpassworderrorstate:'Please Enter new password need at least one Simple letters'})
+      this.setState({confirmpassworderrorstate:'Contain at least one lowercase letter'})
      
     }else if (this.state.passwordstate.search(/[A-Z]/) == -1) {
-      this.setState({confirmpassworderrorstate:'Please Enter new password need at least one Capital letters'})
+      this.setState({confirmpassworderrorstate:'Contain at least one uppercase letter'})
    
     } else if (this.state.passwordstate.search(/[!@#$%^&*]/) == -1) {
-        this.setState({confirmpassworderrorstate:'Please Enter special characters in the password'})
-    
+        this.setState({confirmpassworderrorstate:'Contain at least one Special character'})
+
     }else{
        if(this.state.checked1==false){
-      alert('please read and select " Terms and conditions"')
-    }else if(this.state.checked2==false){
-      alert('please read and select " Terms and conditions"')
-    }if(this.state.checked3==false){
-      alert('please read and select " Terms and conditions"')
-    }else{
+      alert(' Please Read & Agree by selecting Terms & Conditions And Privacy Policy.')
+      }else if(this.state.checked2==false){
+      alert(' Please Read & Agree by selecting Terms & Conditions And Privacy Policy.')
+      // if(this.state.checked3==false){
+      //   alert('please read and select " Terms and conditions"')
+      // }
+     }else{
 
   const title = await AsyncStorage.getItem('title');
   const firstname = await AsyncStorage.getItem('firstname');
@@ -259,6 +262,9 @@ static getDerivedStateFromProps(props, state) {
       organization : organization,
       state : this.state.statenamestate,
       country_id : this.state.countriesidstate,
+      terms_and_condition:this.state.checked1,
+      marketing_agreement:this.state.checked3,
+      privacy_policy:this.state.checked2
 
     
 
@@ -318,11 +324,36 @@ static getDerivedStateFromProps(props, state) {
   }
   }
   focusConfirmpassword=()=>{
+    // if(this.state.passwordstate!=''){
+     
+    //   if (this.state.passwordstate.length < 6) {
+    //     alert(this.state.passwordstate.length );
+    //     this.setState({confirmpassworderrorstate:'Please Enter new password contain minimum 6 charactors'})
+       
+    // } else if (this.state.passwordstate.length > 50) {
+    //   this.setState({confirmpassworderrorstate:'Please Enter new password too long'})
+    
+    // } else if (this.state.passwordstate.search(/\d/) == -1) {
+    //   this.setState({confirmpassworderrorstate:'Contain at least one number,'})
+      
+    // } else if (this.state.passwordstate.search(/[a-z]/) == -1) {
+    //   this.setState({confirmpassworderrorstate:'Contain at least one lowercase letter'})
+     
+    // }else if (this.state.passwordstate.search(/[A-Z]/) == -1) {
+    //   this.setState({confirmpassworderrorstate:'Contain at least one uppercase letter'})
+   
+    // } else if (this.state.passwordstate.search(/[!@#$%^&*]/) == -1) {
+    //     this.setState({confirmpassworderrorstate:'Contain at least one Special character'})
+    // }
+
+  //  }
+   
     this.setState({confirmpassworderrorstate:''})
+    this.setState({confirmpasswordnotmatcherrorstate:''})
   }
   blurConfirmpassword=()=>{
     if(this.state.confirmpasswordstate==''){
-      this.setState({confirmpassworderrorstate:'Confirm password is empty'})
+      this.setState({confirmpasswordnotmatcherrorstate:'Confirm password is empty'})
   }
   }
 
@@ -363,7 +394,7 @@ static getDerivedStateFromProps(props, state) {
 
 
                   <Dropdown
-                                label='Countries'
+                                label='*Country'
                               
                                 data={countriesArraydata}
                                 baseColor='gray'
@@ -394,13 +425,18 @@ inputContainerStyle={{ borderBottomWidth: 2,borderBottomColor:'black', }}
                                 inputContainerStyle={{ borderBottomColor: 'transparent' }}
                                 onChangeText={(value,index,data) => this.selectCountry(data[index].id)}
                             />
-                             {this.state.countriesidstate==''?
+                      <View style={{alignSelf:'flex-start',paddingLeft:wp('10%')}}>
+                          {this.state.countriesidstate==''?
          <Text style={{color:'red'}}>
              {this.state.countrynameerrorstate}
       </Text>:
            null
            
           } 
+                          </View>
+                     
+
+  
 
 
                <TextField
@@ -443,7 +479,12 @@ inputContainerStyle={{ borderBottomWidth: 2,borderBottomColor:'black', }}
                   return text;
                 }}
               />   
+              <View style={{marginTop:wp('4%'),paddingBottom:wp('1%')}}>
+              <Text style={{fontSize:wp('3%')}}>Add Rubbermaid Commercial Products in Use</Text>
+              </View>
+             
   <View style={{width:wp('80%'),paddingTop:10 }}>
+ 
 <MultiSelect
          
           items={productdata}
@@ -481,7 +522,7 @@ inputContainerStyle={{ borderBottomWidth: 2,borderBottomColor:'black', }}
           
         </View>
 
-   <Text style={{fontSize:wp('3%')}}>Please add this vedio and document suggestions</Text>
+  
                    
             
 
@@ -505,7 +546,21 @@ inputContainerStyle={{ borderBottomWidth: 2,borderBottomColor:'black', }}
                   return text;
                 }}
               />
+              {this.state.confirmpassworderrorstate!=''?
+               <View style={{paddingLeft:wp('5.5%'),paddingRight:wp('5.5%')}}>
+               <Text style={{color:'red',fontSize:11}}>Password contain at least 6 charactors.1 Uppercase letter,1 lowercase letter,1 special charactor and one number </Text>
+ 
+               </View>
+              : 
 
+              <View style={{paddingLeft:wp('5.5%'),paddingRight:wp('5.5%')}}>
+              <Text style={{color:'grey',fontSize:11}}>Password contain at least 6 charactors.1 Uppercase letter,1 lowercase letter,1 special charactor and one number </Text>
+
+              </View>
+              
+            }
+              
+             
 
           <TextField
                 label={"Confirm Password"}
@@ -515,7 +570,7 @@ inputContainerStyle={{ borderBottomWidth: 2,borderBottomColor:'black', }}
                 onChangeText={text => {
                   this.setState({ confirmpasswordstate:text });
                 }}
-                error={this.state.confirmpassworderrorstate}
+                error={this.state.confirmpasswordnotmatcherrorstate}
                 onFocus={()=>this.focusConfirmpassword()}
                 onBlur={()=>this.blurConfirmpassword()}
                 secureTextEntry
@@ -539,11 +594,12 @@ inputContainerStyle={{ borderBottomWidth: 2,borderBottomColor:'black', }}
 
                           </View>
                     <View style={{flex:0.8,paddingTop:10,paddingRight:5}}>
-                    <Text style={{fontSize:wp('4%')}}>I agree to the 
-                                                          <Text style={{ color: 'red', textDecorationLine: 'underline',fontSize:wp('4%') }}> Terms & condition </Text>
-                                                          of this Application.
-                                                      </Text>
-
+                    <TouchableOpacity onPress={ ()=>{ Linking.openURL('https://smartapp.rcpanz.com.au/terms')}}> 
+                          <Text style={{fontSize:wp('4%')}}>*I agree to the 
+                            <Text style={{ color: 'red', textDecorationLine: 'underline',fontSize:wp('4%') }}> Terms & condition </Text>
+                                                                of this Application.
+                                                            </Text>
+                     </TouchableOpacity> 
                     </View>
 
       
@@ -560,10 +616,13 @@ inputContainerStyle={{ borderBottomWidth: 2,borderBottomColor:'black', }}
 
                           </View>
                     <View style={{flex:0.8,paddingTop:wp('5%'),paddingRight:wp('3%')}}>
-                    <Text style={{fontSize:wp('4%')}}>Any personal information you provide to us when registering to use this application will be collected in accordance with our
-                            <Text style={{ color: 'red', textDecorationLine: 'underline',fontSize:wp('4%') }}> Privacy Policy </Text>
+                      <TouchableOpacity onPress={ ()=>{ Linking.openURL('https://smartapp.rcpanz.com.au/privacy')}}>
+                      <Text style={{fontSize:wp('4%')}}>*Any personal information you provide to us when registering to use this application will be collected in accordance with our
+                         <Text style={{ color: 'red', textDecorationLine: 'underline',fontSize:wp('4%') }}> Privacy Policy </Text>
                                                       
                                 </Text>
+                      </TouchableOpacity>
+                    
 
                     </View>
 

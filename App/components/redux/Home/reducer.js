@@ -8,14 +8,18 @@ const pdfListResult=undefined
 const vedioPlayerListResult=undefined
 const selecthomeDocumentResult=undefined
 const selecthomeVedioResult=undefined;
-const productsArray=undefined
+const productsArray=undefined;
+const vedioListResultPagination=undefined;
+const pdfListResultPagination=undefined
 const initState = new Map({
   catagoryResult,
   pdfListResult,
   vedioPlayerListResult,
   selecthomeDocumentResult,
   selecthomeVedioResult,
-  productsArray
+  productsArray,
+  vedioListResultPagination,
+  pdfListResultPagination
   
 });
 
@@ -31,7 +35,9 @@ export default function homeReducer(state = initState, action) {
                vedioPlayerListResult:undefined,
                selecthomeVedioResult:undefined,
                selecthomeDocumentResult:undefined,
-               productsArray:undefined
+               productsArray:undefined,
+               vedioListResultPagination:undefined,
+               pdfListResultPagination:undefined
               
           }
 
@@ -90,6 +96,7 @@ export default function homeReducer(state = initState, action) {
             case homeActions.GET_VIDEO_LIST_RESULT_SUCCESS:
               return{
                 vedioListResult:action.result.result,
+                vedioListResultPagination:action.result.pagination,
                 loading:false
               }
               case homeActions.GET_VIDEO_LIST_RESULT_ERROR:
@@ -215,6 +222,7 @@ export default function homeReducer(state = initState, action) {
                   case homeActions.GET_PDF_LIST_RESULT_SUCCESS:
                     return{
                       pdfListResult:action.result.result,
+                      pdfListResultPagination:action.result.pagination,
                       loading:false
                     }
                     case homeActions.GET_PDF_LIST_RESULT_ERROR:

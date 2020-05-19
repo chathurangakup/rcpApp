@@ -194,7 +194,7 @@ export function* getCategories() {
 export function* getVideoList() {
   yield takeEvery(actions.GET_VIDEO_LIST, function* (payload) {
   
-    const url = getVedioListURL+payload.categoryid+'/'+payload.productid+'/m?search_key='+payload.searchtext+'&orderby='+payload.orderby; //'https://api.winmehub.com/v1/api/signup'
+    const url = getVedioListURL+payload.categoryid+'/'+payload.productid+'/m?search_key='+payload.searchtext+'&orderby='+payload.orderby+'&page='+payload.pageno; //'https://api.winmehub.com/v1/api/signup'
     console.log(payload.access_token)
     try {
       const response = yield fetch(url, {
@@ -294,7 +294,7 @@ export function* getVedioPlayerList() {
 export function* getPdfList() {
   yield takeEvery(actions.GET_PDF_LIST, function* (payload) {
   
-    const url = getPdfListURL+payload.categoryid+'/'+payload.productid+'/m?search_key='+payload.searchtext+'&orderby='+payload.orderby;    //'https://api.winmehub.com/v1/api/signup'
+    const url = getPdfListURL+payload.categoryid+'/'+payload.productid+'/m?search_key='+payload.searchtext+'&orderby='+payload.orderby+'&page='+payload.pageno;    //'https://api.winmehub.com/v1/api/signup'
     console.log(payload.access_token)
     try {
       const response = yield fetch(url, {

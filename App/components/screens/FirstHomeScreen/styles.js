@@ -20,6 +20,11 @@ export default EStyleSheet.create({
         width: '80%'
       },
       wrapper:{
-        backgroundColor:'white'
+        backgroundColor:'white',
+      height:hp('100%')
+      },
+      wrapper1:{
+        backgroundColor:'white',
+      
       }
 });

@@ -2,6 +2,9 @@ import React from 'react'
 import {
   
     Image,
+    Text,
+    View,
+    Platform
    
    
   } from 'react-native';
@@ -284,6 +287,7 @@ const TabView = createBottomTabNavigator({
     Home: {
       screen: Home,
       navigationOptions: {
+       
         tabBarIcon: ({ focused }) => {
             const image = focused 
             ? require('../../components/images/home_s.png') 
@@ -291,7 +295,8 @@ const TabView = createBottomTabNavigator({
             return (
                 <Image 
                     source={image}
-                    style={{width:wp('8%'),height:wp('8%')}}
+                    //style={{width:wp('9%'),height:wp('14%')}}
+                    style={{width:wp('8%'),height:wp('9%')}}
                 />
             )
       }
@@ -300,6 +305,7 @@ const TabView = createBottomTabNavigator({
     Favourite: {
       screen: Favourite,
       navigationOptions: {
+       
         tabBarIcon: ({ focused }) => {
             const image = focused 
             ? require('../../components/images/star_s.png') 
@@ -307,7 +313,8 @@ const TabView = createBottomTabNavigator({
             return (
                 <Image 
                     source={image}
-                    style={{width:wp('8%'),height:wp('8%')}}
+                    //style={{width:wp('14%'),height:wp('14%')}}
+                   style={{width:wp('8%'),height:wp('9%')}}
                 />
             )
       }
@@ -317,6 +324,7 @@ const TabView = createBottomTabNavigator({
     Catalogue: {
       screen: Catalogue,
       navigationOptions: {
+     
         tabBarIcon: ({ focused }) => {
             const image = focused 
             ? require('../../components/images/catalogue_s.png') 
@@ -324,7 +332,8 @@ const TabView = createBottomTabNavigator({
             return (
                 <Image 
                     source={image}
-                    style={{width:wp('8%'),height:wp('8%')}}
+                   // style={{width:wp('16%'),height:wp('14%')}}
+                    style={{width:wp('8%'),height:wp('9%')}}
                 />
             )
       }
@@ -333,6 +342,7 @@ const TabView = createBottomTabNavigator({
     Profile: {
         screen: Profile,
         navigationOptions: {
+            
             tabBarIcon: ({ focused }) => {
                 const image = focused 
                 ? require('../../components/images/profile_s.png') 
@@ -340,7 +350,8 @@ const TabView = createBottomTabNavigator({
                 return (
                     <Image 
                         source={image}
-                        style={{width:wp('8%'),height:wp('8%')}}
+                       // style={{width:wp('10%'),height:wp('14%')}}
+                       style={{width:wp('8%'),height:wp('9%')}}
                     />
                 )
           }
@@ -349,21 +360,37 @@ const TabView = createBottomTabNavigator({
   },
     {
       order: ['Home','Favourite', 'Catalogue', 'Profile'],
+      
       tabBarOptions: {
         showIcon: true,
         activeTintColor: 'red',
         inactiveTintColor: 'gray',
+         //showLabel:false,
         style: {
           backgroundColor: '#ffcf01',
           height: wp('15%'),
+        
+         
         },
+        tabBarPosition: 'bottom',
         swipeEnabled: true,
         animationEnabled: true,
         labelStyle: {
-          marginTop:0,
-          marginBottom:wp('2%'),
+      
+    
           fontSize:wp('3%'),
+          justifyContent:'center',
+          alignSelf:'center'
         },
+       
+        safeAreaInset:{
+            bottom:'always',
+            
+        },
+    
+        tabBarPosition: 'bottom',
+        lazyLoad: true,
+        shifting: true,
         borderTopColor: "#fff",
       },
       
